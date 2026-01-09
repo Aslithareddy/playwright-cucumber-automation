@@ -93,7 +93,16 @@ The report will be generated at:
 ```
 reports/cucumber-report.html
 ```
+## Sample Test Report
 
+Below is a sample HTML report generated after test execution:
+
+![Cucumber HTML Report](docs/cucumber-report.png)
+
+The report provides:
+- Feature and scenario execution status
+- Step-level results
+- Execution time and failure details
 ---
 
 ## Framework Structure (High-Level)
