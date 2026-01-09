@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js",
-    "lint": "eslint .",
-    "prepare": "husky install",
-    "test:ui": "set HEADLESS=false && cucumber-js",
-    "report": "node scripts/generate-report.js",
-    "test:debug": "set HEADLESS=false && set SLOW_MO=500 && cucumber-js"
-  },
+  "test": "cucumber-js",
+  "test:parallel": "cucumber-js --parallel 2",
+  "test:ui": "powershell -Command \"$env:HEADLESS='false'; cucumber-js\"",
+  "test:debug": "powershell -Command \"$env:HEADLESS='false'; $env:SLOW_MO='500'; cucumber-js\"",
+  "report": "node scripts/generate-report.js",
+  "test:ci": "cucumber-js --profile ci"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aslithareddy/playwright-cucumber-automation.git"
