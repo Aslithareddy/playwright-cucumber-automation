@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cucumber-js",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "test:ui": "set HEADLESS=false && cucumber-js",
+    "report": "node scripts/generate-report.js",
+    "test:debug": "set HEADLESS=false && set SLOW_MO=500 && cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +25,16 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.5.0",
     "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "cucumber-html-reporter": "^7.2.0",
     "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
+    "eslint-plugin-playwright": "^2.4.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "multiple-cucumber-html-reporter": "^3.9.3",
     "playwright": "^1.57.0",
+    "prettier": "^3.7.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
